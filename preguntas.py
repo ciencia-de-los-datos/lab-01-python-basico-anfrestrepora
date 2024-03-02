@@ -15,7 +15,12 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 from datetime import datetime
 from collections import defaultdict
 
-def pregunta_01(lista):
+def pregunta_01():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
+
     truck_events=lista
     colsum = [
     [row[1]] 
@@ -40,7 +45,11 @@ def pregunta_01(lista):
     return suma_columna
 
 
-def pregunta_02(lista):
+def pregunta_02():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
 
     contador_letras = {}
 
@@ -73,7 +82,11 @@ def pregunta_02(lista):
     return lista_tuplas
 
 
-def pregunta_03(lista):
+def pregunta_03():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     """
     Retorne la suma de la columna 2 por cada letra de la primera columna como una lista
     de tuplas (letra, suma) ordendas alfabeticamente.
@@ -107,7 +120,11 @@ def pregunta_03(lista):
     return resultado
 
 
-def pregunta_04(lista):
+def pregunta_04():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     
     """
     La columna 3 contiene una fecha en formato `YYYY-MM-DD`. Retorne la cantidad de
@@ -170,7 +187,11 @@ def pregunta_04(lista):
     return resultado
 
 
-def pregunta_05(lista):
+def pregunta_05():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     """
     Retorne una lista de tuplas con el valor maximo y minimo de la columna 2 por cada
     letra de la columa 1.
@@ -208,7 +229,11 @@ def pregunta_05(lista):
     return resultado
 
 
-def pregunta_06(lista):
+def pregunta_06():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     """
     La columna 5 codifica un diccionario donde cada cadena de tres letras corresponde a
     una clave y el valor despues del caracter `:` corresponde al valor asociado a la
@@ -262,7 +287,11 @@ def pregunta_06(lista):
     return resultado
 
 
-def pregunta_07(lista):
+def pregunta_07():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla contiene un
     valor posible de la columna 2 y una lista con todas las letras asociadas (columna 1)
@@ -306,7 +335,11 @@ def pregunta_07(lista):
     return resultado
 
 
-def pregunta_08(lista):
+def pregunta_08():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     """
     Genere una lista de tuplas, donde el primer elemento de cada tupla contiene  el valor
     de la segunda columna; la segunda parte de la tupla es una lista con las letras
@@ -357,7 +390,11 @@ def pregunta_08(lista):
     return resultado
 
 
-def pregunta_09(lista):
+def pregunta_09():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     """
     Retorne un diccionario que contenga la cantidad de registros en que aparece cada
     clave de la columna 5.
@@ -401,7 +438,11 @@ def pregunta_09(lista):
     return resultado
 
 
-def pregunta_10(lista):
+def pregunta_10():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     """
     Retorne una lista de tuplas contengan por cada tupla, la letra de la columna 1 y la
     cantidad de elementos de las columnas 4 y 5.
@@ -441,7 +482,11 @@ def pregunta_10(lista):
     return resultado
 
 
-def pregunta_11(lista):
+def pregunta_11():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     """
     Retorne un diccionario que contengan la suma de la columna 2 para cada letra de la
     columna 4, ordenadas alfabeticamente.
@@ -485,7 +530,11 @@ def pregunta_11(lista):
     return resultado
 
 
-def pregunta_12(lista):
+def pregunta_12():
+    with open("data.csv", "r") as file:
+        lista = file.readlines()
+    lista = [line.replace("\n", '') for line in lista]
+    lista = [line.split("\t") for line in lista]
     """
     Genere un diccionario que contengan como clave la columna 1 y como valor la suma de
     los valores de la columna 5 sobre todo el archivo.
@@ -523,23 +572,3 @@ def pregunta_12(lista):
 
     resultado = suma_columna5_por_letra_columna1(lista)    
     return resultado
-
-with open("data.csv", "r") as file:
-    lista = file.readlines()
-lista = [line.replace("\n", '') for line in lista]
-lista = [line.split("\t") for line in lista]
-
-
-print(pregunta_01(lista))
-print(pregunta_02(lista))
-print(pregunta_03(lista))
-print(pregunta_04(lista))
-print(pregunta_05(lista))
-print(pregunta_06(lista))
-print(pregunta_07(lista))
-print(pregunta_08(lista))
-print(pregunta_09(lista))
-print(pregunta_10(lista))
-print(pregunta_11(lista))
-print(pregunta_12(lista))
-
