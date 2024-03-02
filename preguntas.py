@@ -326,7 +326,7 @@ def pregunta_07():
                 asociaciones[valor_col2].append(letra_col1)  # Agregamos la letra a la lista existente
 
         # Convertimos el diccionario a una lista de tuplas
-        lista_tuplas = sorted([(valor, letras) for valor, letras in asociaciones.items()], key=lambda x: x[0])
+        lista_tuplas = sorted([(int(valor), letras) for valor, letras in asociaciones.items()], key=lambda x: x[0])
 
         return lista_tuplas
 
@@ -382,7 +382,7 @@ def pregunta_08():
             asociaciones[valor] = sorted(list(asociaciones[valor]))
 
         # Convertimos el diccionario a una lista de tuplas y ordenamos por el valor de la segunda columna
-        lista_tuplas = sorted([(valor, asociaciones[valor]) for valor in sorted(asociaciones.keys())])
+        lista_tuplas = sorted([(int(valor), asociaciones[valor]) for valor in sorted(asociaciones.keys())])
 
         return lista_tuplas
 
